@@ -1,4 +1,4 @@
-# https://ankit-25m.github.io/ankit-mangal-portfolio/
+# Ankit Mangal Portfolio
 
 Hello Folks,
 
