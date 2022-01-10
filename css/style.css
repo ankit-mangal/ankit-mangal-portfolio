@@ -1,0 +1,288 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+  --black: #010326;
+  --dkblue: #024059;
+  --plum: #f6f6fe;
+  --hotmag: #e58900;
+  --magenta: #f2b705;
+  --aqua: #f6f6fe;
+  --white: #f7f8fa;
+  --font-size: 1.3rem;
+  --work-sans: "Work Sans", sans-serif;
+}
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--work-sans);
+  font-size: var(--font-size);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+a {
+  color: var(--magenta);
+}
+
+a:hover {
+  color: var(--hotmag);
+}
+
+.button {
+  background-color: var(--magenta);
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: var(--white);
+  background-color: var(--hotmag);
+}
+
+.gradient {
+  background: rgb(242, 183, 5);
+  background: linear-gradient(
+    90deg,
+    rgba(242, 183, 5, 1) 0%,
+    rgba(246, 246, 254, 1) 100%
+  );
+  height: 2px;
+}
+/* intro section styles */
+#intro {
+  padding: 4rem 1rem 10rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.name span {
+  font-family: var(--work-sans);
+  color: var(--aqua);
+  font-size: 4rem;
+  font-weight: 700;
+  display: block;
+}
+
+#intro h2 {
+  font-size: 4rem;
+}
+
+/* contact form styles */
+
+.plumsec {
+  background-color: var(--plum);
+}
+
+#contact {
+  width: 400px;
+  padding: 5rem 0;
+  text-align: center;
+  margin: 0 auto;
+  color: var(--black);
+}
+
+p {
+  line-height: 1.5;
+}
+
+#contact a {
+  color: var(--white);
+}
+
+#contact p:last-child {
+  margin-top: 3rem;
+}
+
+/* nav styles */
+nav {
+  font-size: 80%;
+  padding: 1rem;
+  position: sticky;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav [class*="fa-"] {
+  color: var(--aqua);
+  font-size: 150%;
+}
+
+nav h1 [class*="fa-"] {
+  font-size: 100%;
+  color: var(--aqua);
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover,
+nav [class*="fa-"]:hover {
+  color: var(--magenta);
+}
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav li:first-child {
+    flex-basis: auto;
+    margin-right: auto;
+  }
+}
+
+/* footer styles */
+footer {
+  text-align: center;
+  padding: 4rem 0;
+}
+footer ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+  font-size: 3rem;
+  justify-content: center;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.section-blue {
+  background-color: var(--dkblue);
+}
+#project {
+  padding: 4rem 1rem;
+}
+
+#project h2 {
+  font-size: 2.5rem;
+  margin-bottom: calc(2.5rem * 1.5);
+}
+
+#project h3 {
+  color: var(--aqua);
+}
+
+#project h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+#project ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+#project img {
+  margin: 1.5rem 0 3.5rem 0;
+  border-left: 1px solid var(--aqua);
+  border-top: 1px solid var(--aqua);
+  border-radius: 25px;
+  padding: 1rem;
+}
+.blackbox {
+  background-color: var(--black);
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+@media (min-width: 800px) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  #project img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+  .text {
+    grid-column: 5/11;
+    grid-row: 1/2;
+    order: 2;
+    text-align: right;
+  }
+  #project ul {
+    justify-content: flex-end;
+  }
+  #project .reverse .text {
+    grid-column: 1/7;
+    text-align: left;
+  }
+
+  #project .reverse img {
+    grid-column: 6/11;
+    grid-row: 1/2;
+  }
+  #project .reverse ul {
+    justify-content: flex-start;
+  }
+  #project {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+}
